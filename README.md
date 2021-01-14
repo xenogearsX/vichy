@@ -1,2 +1,2 @@
 # vichy
-website on Vichy
+static website on Vichy using HTML 5 and CSS3
