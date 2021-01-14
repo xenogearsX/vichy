@@ -1,0 +1,359 @@
+/* Définition des polices personnalisées */
+
+@font-face
+{
+    font-family: 'BallparkWeiner';
+    src: url('polices/ballpark.eot');
+    src: url('polices/ballpark.eot?#iefix') format('embedded-opentype'),
+         url('polices/ballpark.woff') format('woff'),
+         url('polices/ballpark.ttf') format('truetype'),
+         url('polices/ballpark.svg#BallparkWeiner') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face
+{
+    font-family: 'Dayrom';
+    src: url('polices/dayrom.eot');
+    src: url('polices/dayrom.eot?#iefix') format('embedded-opentype'),
+         url('polices/dayrom.woff') format('woff'),
+         url('polices/dayrom.ttf') format('truetype'),
+         url('polices/dayrom.svg#Dayrom') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Eléments principaux de la page */
+
+body /* image de fond, police principale, et couleur du texte principale */
+{
+    background: url('images/motifvichy.png');
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #181818;
+}
+
+#blocPage /* taille de la page web et centrage */
+{
+    width: 900px;
+    margin: auto;
+}
+
+section h1, footer h1, nav a /* s'applique au h1 dans section et footer et à a dans nav */
+{
+    font-family: Dayrom, serif;
+    font-weight: normal;
+    text-transform: uppercase; /* pour passer en majuscule */
+}
+/* Header */
+
+header
+{/* la ligne séparatrice */
+    background: url('images/ligne.png') repeat-x bottom;
+    display: flex;
+    justify-content: space-between; /* étirer sur l'axe */
+    align-items: flex-end; /* alignement axe secondaire sur la fin */
+}
+
+#titre_principal /* mettre les éléments de # en colonne */
+{
+    display: flex;
+    flex-direction: column;
+}
+
+#logo /* mettre le logo et Zozor en ligne et aligné sur la base */
+{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+#logo img /*régler la taille du logo */
+{
+    width: 59px;
+    height: 60px;
+}
+
+header h1 /* mettre la police, la taille et décaler de la gauche de 10px */
+{
+    font-family: 'BallparkWeiner', serif;
+    font-size: 2.5em;
+    font-weight: normal;
+    margin: 0 0 0 10px;
+}
+
+header h2 /* police, taille, aucune marge en haut */
+{
+    font-family: Dayrom, serif;
+    font-size: 1.1em;
+    margin-top: 0px;
+    font-weight: normal;
+}
+/* Navigation */
+
+nav ul /* enlever les puces */
+{
+    list-style-type: none;
+    display: flex;
+}
+
+nav li /* marge à droite entre les puces */
+{
+    margin-right: 15px;
+}
+
+nav a /* taille, couleur, marge intérieur basse, et ene pas souligner le lien */
+{
+    font-size: 1.3em;
+    color: #181818;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+nav a:hover /* change quand on passe la souris en couleur et bord du bas */
+{
+    color: #760001;
+    border-bottom: 3px solid #760001;
+}
+
+/* Bannière */
+
+#banniereImage, #banniereImage2, #banniereImage3 /* marge au dessus, hauteur, arrondi des bordures, image de fond
+position relative pour pouvoir passer une absolute dessus, ombre de boîte, marge du bas */
+{
+    margin-top: 15px;
+    height: 200px;
+    border-radius: 5px;
+    position: relative;
+    box-shadow: 0px 4px 4px #1c1a19;
+    margin-bottom: 25px;
+}
+
+#banniereImage
+{
+    background: url('images/vichy.jpg') no-repeat;
+}
+#banniereImage2
+{
+    background: url('images/opera.jpg') no-repeat;
+}
+#banniereImage3
+{
+    background: url('images/source.jpg') no-repeat;
+}
+
+#banniereDescription /* le texte à gauche absolute pour être dans le relative, en bas du background, arrondi de certains bords; largeur, hauteur, marge intérieure haute, marge intérieure gauche
+couleur de fond avec transparence, couleur du texte, taille */
+{
+    position: absolute;
+    bottom: 0;
+    border-radius: 0px 0px 5px 5px;
+    width: 99.7%;
+    height: 33px;
+    padding-top: 15px;
+    padding-left: 4px;
+    background-color: #4e78d3;
+    color: white;
+    font-size: 0.8em;
+    
+}
+
+.redButton /* hauteur, absolute/relative, 5px de la droite et du bas, img background répétée sur x, bord, arrondi bord, taille police, centré, marge int, couleur police, pas de soulignage etc */
+{
+    height: 25px;
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    background: url('images/fond_degraderouge.png') repeat-x;
+    border: 1px solid #760001;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 3px 8px 0px 8px;
+    color: white;
+    text-decoration: none;
+}
+
+.redButton img /* pas de bord pour la répétition de l'image */
+{
+    border: 0;
+}
+
+/* Corps */
+
+section /* marge basse */
+{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+article, aside /* mettre l'alignement des textes */
+{
+    text-align: justify;
+}
+
+article /* marge droite, grossir de 3 pour remplir par rapport aux autres num de flex */
+{
+    margin-right: 20px;
+    flex: 3;
+}
+
+.ico /* image pincealinge centré et 8px à droite */
+{
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+article p /* taille de police */
+{
+    font-size: 1em;
+}
+
+aside /* remplie le reste de la page à 1.2, relative/absolute, couleur background, ombre de boîte, bord arrondi, marge intérieure, couleur et taille police */
+{
+    flex: 1.2;
+    position: relative;
+    background-color: #4e78d3;
+    box-shadow: 0px 2px 5px #1c1a19;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 0.9em;
+}
+
+#photoAside /* photo de Napo au centre */
+{
+    text-align: center;
+}
+
+#photoAside img /* bord pour l'image de zozor */
+{
+    border: 1px solid #181818;
+}
+
+aside img /* marge à droite 5px */
+{
+    margin-right: 5px;
+}
+
+/* Footer */
+
+footer /* tite flèche  au centre avec marge sup + séparateur */
+{
+    display: flex;
+    background:  url('images/icotop.png') no-repeat top center, url('images/ligne.png') repeat-x top, url('images/shadow.png') repeat-x top;
+    padding-top: 25px;
+}
+
+footer p, footer ul /* taille du texte */
+{
+    font-size: 0.8em;
+}
+
+footer h1 /* taille des titres */
+{
+    font-size: 1.1em;
+}
+
+
+#actualite /* largeur de la page totale */
+{
+    width: 28%;
+}
+
+#myPhotos
+{
+    width: 35%;
+}
+
+#city
+{
+    width: 31%;
+}
+
+#myPhotos img /* bord + marge à droite des photos */
+{
+    border: 1px solid #181818;
+    margin-right: 2px;
+}
+
+#cityList /* pas de marge en haut et espacement entre les deux listes */
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+#city ul /* changer la puce, marge int gauche */
+{
+    list-style-image: url('images/ico_liensexterne.png');
+    padding-left: 2px;
+}
+
+#city a /* liens vers les amis pas de soulignage, couleur */
+{
+    text-decoration: none;
+    color: #760001;
+}
+
+/* comportement pour petit écran */
+@media all and (max-width: 1024px)/* cibler en particulier les mobiles avec max-device-width
+media handeld peut être utilisé théoriquement mais non reconnu par les navigateurs mobiles
+modification sinon la largeur viewport du mobile dans le head du html */
+{
+   
+    nav/* dimension flexible de la nav et nav en colonne
+    texte plus petit et plus de bordure */
+    {
+        width: auto;
+        text-align: left;
+    }
+    
+    nav ul
+    {
+        flex-direction: column;
+    }
+
+    nav li
+    {
+        padding-left: 4px;
+    }
+    
+    nav a
+    {
+        font-size: 1.1em;
+    }
+    
+    nav a:hover
+    {
+        border-bottom: 0;
+    }
+    
+    #banniereImage, #banniereImage2, #banniereImage3 /* retirer la bannière en basse res */
+    {
+        display: none;
+    }
+
+    #blocPage /*fixer la largeur du site en auto au lieu de 900  pour enlever barre de défilement */
+    {
+        width: auto; 
+    }
+
+    section /* bloc sur l'auteur passe en dessous de l'article
+    photo de zozor en flottant à droite pour pas perdre de place */
+    {
+        flex-direction: column;
+    }
+
+    article, aside
+    {
+        width: auto;
+        margin-bottom: 15px;
+    }
+    
+    
+    #photoAside img
+    {
+        width: 110px;
+        float: right;
+        margin-left: 15px;
+    }
